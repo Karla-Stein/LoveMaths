@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function(){
     for (let button of buttons){
         button.addEventListener("click", function(){
             if(this.getAttribute("data-type") === "submit"){
-                alert("You clicked 'Submit'")
+                checkAnswer();
             }else{
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
@@ -34,7 +34,22 @@ function runGame(gameType){
 
 }
 
+}
+
+/**
+ * Checks the answer against the first element in 
+ * the returned array 
+ */
 function checkAnswer(){
+   let userGuess =  parseInt(document.getElementById("answer-box").value);
+   let correctAnswer = calculateCorrectAnswer();
+   let isCorrect = userGuess === correctAnswer[0];
+   if(isCorrect){
+    alert("You are correct");
+    
+   }else{
+    alert(`Awww..${userGuess} is not correct. Correct anser is ${correctAnswer[0]}`)
+   }
 
 }
 
@@ -70,7 +85,7 @@ function displayAdditionQuestion(num1, num2){
      document.getElementById("operator").textContent = "+";
     }
 
-}
+
 
 function displaySubtractQuestion(){
 
