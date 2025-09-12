@@ -46,9 +46,11 @@ function checkAnswer(){
    let isCorrect = userGuess === correctAnswer[0];
    if(isCorrect){
     alert("You are correct");
+    incrementScore();
     
    }else{
     alert(`Awww..${userGuess} is not correct. Correct anser is ${correctAnswer[0]}`)
+    incrementWrongAnswer();
    }
 
 }
@@ -71,12 +73,21 @@ function calculateCorrectAnswer(){
 
 }
 
+/**
+ * Gets the current score from the DOM and increments by 1
+ */
 function incrementScore(){
-
+    let score = parseInt(document.getElementById("score").innerText);
+    document.getElementById("score").innerText = score+1
+     
 }
 
+/**
+ * Gets the current wrong answers from the DOM and increments by 1
+ */
 function incrementWrongAnswer(){
-
+     let wrongAnswer = parseInt(document.getElementById("incorrect").innerText);
+     document.getElementById("incorrect").innerText = wrongAnswer+1
 }
 
 function displayAdditionQuestion(num1, num2){
