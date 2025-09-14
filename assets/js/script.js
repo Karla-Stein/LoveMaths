@@ -30,6 +30,10 @@ function runGame(gameType){
        displayAdditionQuestion(num1, num2)
 }  else if(gameType === "subtract"){
        displaySubtractQuestion(num1, num2)
+} else if(gameType === "multiply"){
+       displayMultiplyQuestion(num1, num2)
+}else if(gameType === "division"){
+       displayDivisionQuestion(num1, num2)
 }else{
     alert(`unknown game type ${gameType}`)
     throw `unknown game type ${gameType}. Aborting!`
@@ -70,6 +74,10 @@ function calculateCorrectAnswer(){
         return [operand1 + operand2, "addition"];
      } if (operator === "-"){
         return [operand1 - operand2, "subtract"];
+     } if (operator === "*"){
+     return [operand1 * operand2, "multiply"];
+     }if (operator === "/"){
+     return [operand1 * operand2, "division"];
      }else {
         alert(`Unimplemented operator ${operator}`)
         throw `Unimplemented operator ${operator}.Aborting`
@@ -108,10 +116,15 @@ function displaySubtractQuestion(num1, num2){
      document.getElementById("operator").textContent = "-";
 }
 
-function displayMultiplyQuestion(){
+function displayMultiplyQuestion(num1, num2){
+    document.getElementById("operand1").textContent = num1;
+    document.getElementById("operand2").textContent = num2;
+    document.getElementById("operator").textContent = "*";
 
 }
 
-function displayDivisionQuestion(){
-
+function displayDivisionQuestion(num1, num2){
+    document.getElementById("operand1").textContent = num1;
+    document.getElementById("operand2").textContent = num2;
+    document.getElementById("operator").textContent = "/";
 }
