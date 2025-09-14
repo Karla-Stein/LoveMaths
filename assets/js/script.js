@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
         button.addEventListener("click", function(){
             if(this.getAttribute("data-type") === "submit"){
                 checkAnswer();
+                document.getElementById("answer-box").value = "";
             }else{
                 let gameType = this.getAttribute("data-type");
                 runGame(gameType);
@@ -21,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function(){
  * and after the users's answer has been processed
 */
 function runGame(gameType){
+
+    
 
     // Creates two random numbers between 1 and 25
     let num1 = Math.ceil(Math.random()*25);
