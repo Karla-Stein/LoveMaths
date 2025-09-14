@@ -111,10 +111,23 @@ function displayAdditionQuestion(num1, num2){
 
 
 function displaySubtractQuestion(num1, num2){
-     document.getElementById("operand1").textContent = num1;
-     document.getElementById("operand2").textContent = num2;
-     document.getElementById("operator").textContent = "-";
+    // if(num1 > num2){
+    //     document.getElementById("operand1").textContent = num1;
+    //     document.getElementById("operand2").textContent = num2;
+    //     document.getElementById("operator").textContent = "-";
+    // }else{
+    //     num1 = Math.ceil(Math.random() * 25);
+    //     num2 = Math.ceil(Math.random() * 25);
+    //  document.getElementById("operand1").textContent = num1;
+    //  document.getElementById("operand2").textContent = num2;
+    //  document.getElementById("operator").textContent = "-";
+// }
+   document.getElementById("operand1").textContent = num1 > num2 ? num1 : num2;
+   document.getElementById("operand2").textContent = num1 > num2 ? num2 : num1;
+   document.getElementById("operator").textContent = "-"
+
 }
+
 
 function displayMultiplyQuestion(num1, num2){
     document.getElementById("operand1").textContent = num1;
