@@ -149,10 +149,6 @@ function displayMultiplyQuestion(num1, num2){
 
 function displayDivisionQuestion(num1, num2){
     
-    // if(num1 % num2 === 0){
-    // document.getElementById("operand1").textContent =  num1 ;
-    // document.getElementById("operand2").textContent = num2;
-    // document.getElementById("operator").textContent = "/";
     num1 = num1 * num2;
     document.getElementById("operand1").textContent = num1;
     document.getElementById("operand2").textContent = num2;
